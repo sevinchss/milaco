@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marico</title>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1.5rem',
+          '2xl': '1.5rem',
+        },
+      },
+      extend: {
+        boxShadow: {
+          '3xl': '0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)',
+        },
+        backgroundImage: {
+          bg: "url(img/Image (1).png)",
+          sec_bg: "url(img/Born-to-Jump.png)",
+        },
+        colors: {
+          gray: '#707070',
+          blue: '#326CF9',
+          orange: '#FFBF84',
+          pink: '#FE6783',
+          bg: '#131313',
+        }
+      },
+      fontFamily: {
+        'poppins': 'Poppins',
+        'bebas': 'Bebas Neue',
+        'oswald': 'Oswald'
+      }
+
+
+    }
+  }
+
+</script>
+
+<body class="bg-black overflow-x-hidden" id="body">
+  <div class="hidden container" id="burger_anim">
+    <ul class="bg-bg text-white fixed top-0  right-0 w-10/12 pt-5 pr-5 h-[100vh] z-50">
+      <div class="flex justify-end">
+        <button class="w-6 h-6 relative hover:text-blue" id="close_burger">
+          <div class="!w-5 !h-[2px] rotate-[135deg] bg-white absolute"></div>
+          <div class="!w-5 !h-[2px] rotate-45 bg-white"></div>
+        </button>
+      </div>
+      <div class="px-10 pt-10 duration-300 font-poppins">
+        <li class="border-b-white border-b-[1px] py-4 pl-1 hover:text-blue cursor-pointer"><a href="#home"> <select
+              id="cars">
+              <option value="volvo">Use Cases</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select></a>
+        </li>
+
+
+
+        <li class="border-b-white border-b-[1px] py-4 pl-1 hover:text-blue cursor-pointer"><a href="#about">About</a>
+        </li>
+        <li class="border-b-white border-b-[1px] py-4 pl-1 mb-3 hover:text-blue cursor-pointer"><a
+            href="#pricing">Pricing</a></li>
+        <li class="border-b-white border-b-[1px] py-4 pl-1 mb-3 hover:text-blue cursor-pointer"><a href="#blog">Blog</a>
+        </li>
+        <div class="lg:hidden flex items-center mt-8 justify-center text-white  font-poppins gap-5">
+          <button class="font-bold hover:text-blue duration-200">Login</button>
+          <button
+            class="bg-blue rounded-md py-2 px-5 max-w-max text-sm border border-blue hover:bg-transparent hover:border-gray hover:text-gray">Sign
+            Up</button>
+        </div>
+      </div>
+
+    </ul>
+  </div>
+  <header class="flex py-3  bg-black sticky top-0 z-10 duration-300 " id="header" onscroll="scroll()">
+    <div class="container flex lg:justify-around justify-between items-center gap-10  ">
+      <div>
+        <a href="index.html">
+          <img src="img/Company_logo.png" alt="">
+        </a>
+      </div>
+      <div class="flex gap-5 items-center justify-center justify-items-center">
+        <ul class="hidden lg:flex gap-5 items-center font-poppins text-white">
+          <li>
+            <a href="#home" class="hover:after:-translate-x-0 after:scale-0 hover:after:scale-90 
+            after:absolute relative after:top-7 
+            after:duration-300 after:-translate-x-full
+            after:w-full after:h-[2px] after:bg-blue1 flex flex-col hover:text-blue
+            duration-300  after:hover:bg-blue  font-semibold after:bg-white">
+            <select
+            id="cars" class="bg-transparent outline-none">
+            <option value="volvo" class="bg-black">Use Cases</option>
+            <option value="saab" class="bg-black">Use Cases 1</option>
+            <option value="opel" class="bg-black">Use Cases 2</option>
+            <option value="audi" class="bg-black">Use Cases 3</option>
+          </select>
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="hover:after:-translate-x-0 after:scale-0 hover:after:scale-90 
+                        after:absolute relative after:top-7 
+                        after:duration-300 after:-translate-x-full
+                        after:w-full after:h-[2px] after:bg-blue1 flex flex-col hover:text-blue
+                        duration-300  after:hover:bg-blue  font-semibold after:bg-white">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#pricing" class="hover:after:-translate-x-0 after:scale-0 hover:after:scale-90 
+                        after:absolute relative after:top-7 
+                        after:duration-300 after:-translate-x-full
+                        after:w-full after:h-[2px] after:bg-blue1 flex flex-col hover:text-blue
+                        duration-300  after:hover:bg-blue font-semibold after:bg-white">
+              Pricing
+            </a>
+          </li>
+
+          <li>
+            <a href="#blog" class="hover:after:-translate-x-0 after:scale-0 hover:after:scale-90 
+                        after:absolute relative after:top-7 
+                        after:duration-300 after:-translate-x-full
+                        after:w-full after:h-[2px] after:bg-blue1 flex flex-col hover:text-blue
+                        duration-300  after:hover:bg-blue font-semibold after:bg-white">
+              Blog
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+      <div class="lg:flex hidden text-white  font-poppins gap-5">
+        <button class="font-bold hover:text-blue duration-200">Login</button>
+        <button
+          class="bg-blue rounded-md py-2 px-5 max-w-max text-sm border border-blue hover:bg-transparent hover:border-gray hover:text-gray">Sign
+          Up</button>
+      </div>
+      <svg class="lg:hidden" fill="#fffff" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="28"
+        viewBox="0 0 24 28" id="open_burger">
+        <path
+          d="M24 21v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1zM24 13v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1zM24 5v2c0 0.547-0.453 1-1 1h-22c-0.547 0-1-0.453-1-1v-2c0-0.547 0.453-1 1-1h22c0.547 0 1 0.453 1 1z"
+          class="hover:fill-blue1 duration-300 cursor-pointer fill-white lg:hidden">
+        </path>
+      </svg>
+    </div>
+  </header>
+  <section class="container mt-14">
+    <div class="flex justify-center  flex-col items-center lg:gap-16 md:gap-6 gap-3 font-poppins">
+      <div class="flex flex-col text-center ">
+        <p class="lg:text-[95px] md:text-[45px]  text-[30px] tracking-wide w-full font-extrabold text-white">
+          Own your audience.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="1094" height="97" viewBox="0 0 1094 97" fill="none"
+          class="lg:w-[1094px] md:w-[600px] w-full">
+          <path
+            d="M26.02 71.665C21.1433 71.665 16.7733 70.8733 12.91 69.29C9.04667 67.7067 5.94333 65.3633 3.6 62.26C1.32 59.1567 0.116667 55.42 -0.0099997 51.05H17.28C17.5333 53.52 18.3883 55.42 19.845 56.75C21.3017 58.0167 23.2017 58.65 25.545 58.65C27.9517 58.65 29.8517 58.1117 31.245 57.035C32.6383 55.895 33.335 54.3433 33.335 52.38C33.335 50.7333 32.765 49.3717 31.625 48.295C30.5483 47.2183 29.1867 46.3317 27.54 45.635C25.9567 44.9383 23.6767 44.1467 20.7 43.26C16.3933 41.93 12.8783 40.6 10.155 39.27C7.43167 37.94 5.08833 35.9767 3.125 33.38C1.16167 30.7833 0.18 27.395 0.18 23.215C0.18 17.0083 2.42833 12.1633 6.925 8.68C11.4217 5.13333 17.28 3.36 24.5 3.36C31.8467 3.36 37.7683 5.13333 42.265 8.68C46.7617 12.1633 49.1683 17.04 49.485 23.31H31.91C31.7833 21.1567 30.9917 19.4783 29.535 18.275C28.0783 17.0083 26.21 16.375 23.93 16.375C21.9667 16.375 20.3833 16.9133 19.18 17.99C17.9767 19.0033 17.375 20.4917 17.375 22.455C17.375 24.6083 18.3883 26.2867 20.415 27.49C22.4417 28.6933 25.6083 29.9917 29.915 31.385C34.2217 32.8417 37.705 34.235 40.365 35.565C43.0883 36.895 45.4317 38.8267 47.395 41.36C49.3583 43.8933 50.34 47.155 50.34 51.145C50.34 54.945 49.3583 58.3967 47.395 61.5C45.495 64.6033 42.7083 67.0733 39.035 68.91C35.3617 70.7467 31.0233 71.665 26.02 71.665ZM84.4673 71.76C79.2739 71.76 74.5873 70.6517 70.4073 68.435C66.2906 66.2183 63.0289 63.0517 60.6223 58.935C58.2789 54.8183 57.1073 50.005 57.1073 44.495C57.1073 39.0483 58.3106 34.2667 60.7173 30.15C63.1239 25.97 66.4173 22.7717 70.5973 20.555C74.7773 18.3383 79.4639 17.23 84.6573 17.23C89.8506 17.23 94.5373 18.3383 98.7173 20.555C102.897 22.7717 106.191 25.97 108.597 30.15C111.004 34.2667 112.207 39.0483 112.207 44.495C112.207 49.9417 110.972 54.755 108.502 58.935C106.096 63.0517 102.771 66.2183 98.5273 68.435C94.3473 70.6517 89.6606 71.76 84.4673 71.76ZM84.4673 57.7C87.5706 57.7 90.1989 56.56 92.3523 54.28C94.5689 52 95.6773 48.7383 95.6773 44.495C95.6773 40.2517 94.6006 36.99 92.4473 34.71C90.3573 32.43 87.7606 31.29 84.6573 31.29C81.4906 31.29 78.8623 32.43 76.7723 34.71C74.6823 36.9267 73.6373 40.1883 73.6373 44.495C73.6373 48.7383 74.6506 52 76.6773 54.28C78.7673 56.56 81.3639 57.7 84.4673 57.7ZM195.107 17.99L161.857 96.175H144.377L156.537 69.195L134.972 17.99H153.117L165.372 51.145L177.532 17.99H195.107ZM225.112 71.76C219.918 71.76 215.232 70.6517 211.052 68.435C206.935 66.2183 203.673 63.0517 201.267 58.935C198.923 54.8183 197.752 50.005 197.752 44.495C197.752 39.0483 198.955 34.2667 201.362 30.15C203.768 25.97 207.062 22.7717 211.242 20.555C215.422 18.3383 220.108 17.23 225.302 17.23C230.495 17.23 235.182 18.3383 239.362 20.555C243.542 22.7717 246.835 25.97 249.242 30.15C251.648 34.2667 252.852 39.0483 252.852 44.495C252.852 49.9417 251.617 54.755 249.147 58.935C246.74 63.0517 243.415 66.2183 239.172 68.435C234.992 70.6517 230.305 71.76 225.112 71.76ZM225.112 57.7C228.215 57.7 230.843 56.56 232.997 54.28C235.213 52 236.322 48.7383 236.322 44.495C236.322 40.2517 235.245 36.99 233.092 34.71C231.002 32.43 228.405 31.29 225.302 31.29C222.135 31.29 219.507 32.43 217.417 34.71C215.327 36.9267 214.282 40.1883 214.282 44.495C214.282 48.7383 215.295 52 217.322 54.28C219.412 56.56 222.008 57.7 225.112 57.7ZM313.815 17.99V71H297.57V63.78C295.923 66.1233 293.675 68.0233 290.825 69.48C288.038 70.8733 284.935 71.57 281.515 71.57C277.462 71.57 273.883 70.6833 270.78 68.91C267.677 67.0733 265.27 64.445 263.56 61.025C261.85 57.605 260.995 53.5833 260.995 48.96V17.99H277.145V46.775C277.145 50.3217 278.063 53.0767 279.9 55.04C281.737 57.0033 284.207 57.985 287.31 57.985C290.477 57.985 292.978 57.0033 294.815 55.04C296.652 53.0767 297.57 50.3217 297.57 46.775V17.99H313.815ZM342.386 44.4C342.386 38.9533 343.399 34.1717 345.426 30.055C347.516 25.9383 350.334 22.7717 353.881 20.555C357.427 18.3383 361.386 17.23 365.756 17.23C369.239 17.23 372.406 17.9583 375.256 19.415C378.169 20.8717 380.449 22.835 382.096 25.305V0.699999H398.341V71H382.096V63.4C380.576 65.9333 378.391 67.96 375.541 69.48C372.754 71 369.492 71.76 365.756 71.76C361.386 71.76 357.427 70.6517 353.881 68.435C350.334 66.155 347.516 62.9567 345.426 58.84C343.399 54.66 342.386 49.8467 342.386 44.4ZM382.096 44.495C382.096 40.4417 380.956 37.2433 378.676 34.9C376.459 32.5567 373.736 31.385 370.506 31.385C367.276 31.385 364.521 32.5567 362.241 34.9C360.024 37.18 358.916 40.3467 358.916 44.4C358.916 48.4533 360.024 51.6833 362.241 54.09C364.521 56.4333 367.276 57.605 370.506 57.605C373.736 57.605 376.459 56.4333 378.676 54.09C380.956 51.7467 382.096 48.5483 382.096 44.495ZM434.223 71.76C429.03 71.76 424.343 70.6517 420.163 68.435C416.046 66.2183 412.785 63.0517 410.378 58.935C408.035 54.8183 406.863 50.005 406.863 44.495C406.863 39.0483 408.066 34.2667 410.473 30.15C412.88 25.97 416.173 22.7717 420.353 20.555C424.533 18.3383 429.22 17.23 434.413 17.23C439.606 17.23 444.293 18.3383 448.473 20.555C452.653 22.7717 455.946 25.97 458.353 30.15C460.76 34.2667 461.963 39.0483 461.963 44.495C461.963 49.9417 460.728 54.755 458.258 58.935C455.851 63.0517 452.526 66.2183 448.283 68.435C444.103 70.6517 439.416 71.76 434.223 71.76ZM434.223 57.7C437.326 57.7 439.955 56.56 442.108 54.28C444.325 52 445.433 48.7383 445.433 44.495C445.433 40.2517 444.356 36.99 442.203 34.71C440.113 32.43 437.516 31.29 434.413 31.29C431.246 31.29 428.618 32.43 426.528 34.71C424.438 36.9267 423.393 40.1883 423.393 44.495C423.393 48.7383 424.406 52 426.433 54.28C428.523 56.56 431.12 57.7 434.223 57.7ZM502.881 17.42C509.088 17.42 514.028 19.4467 517.701 23.5C521.438 27.49 523.306 33 523.306 40.03V71H507.156V42.215C507.156 38.6683 506.238 35.9133 504.401 33.95C502.565 31.9867 500.095 31.005 496.991 31.005C493.888 31.005 491.418 31.9867 489.581 33.95C487.745 35.9133 486.826 38.6683 486.826 42.215V71H470.581V17.99H486.826V25.02C488.473 22.6767 490.69 20.84 493.476 19.51C496.263 18.1167 499.398 17.42 502.881 17.42ZM538.3 4.31H554.925L544.285 29.77H533.36L538.3 4.31ZM594.013 57.225V71H585.748C579.858 71 575.266 69.575 571.973 66.725C568.68 63.8117 567.033 59.0933 567.033 52.57V31.48H560.573V17.99H567.033V5.07H583.278V17.99H593.918V31.48H583.278V52.76C583.278 54.3433 583.658 55.4833 584.418 56.18C585.178 56.8767 586.445 57.225 588.218 57.225H594.013ZM639.439 0.699999V71H623.194V0.699999H639.439ZM675.341 71.76C670.148 71.76 665.461 70.6517 661.281 68.435C657.165 66.2183 653.903 63.0517 651.496 58.935C649.153 54.8183 647.981 50.005 647.981 44.495C647.981 39.0483 649.185 34.2667 651.591 30.15C653.998 25.97 657.291 22.7717 661.471 20.555C665.651 18.3383 670.338 17.23 675.531 17.23C680.725 17.23 685.411 18.3383 689.591 20.555C693.771 22.7717 697.065 25.97 699.471 30.15C701.878 34.2667 703.081 39.0483 703.081 44.495C703.081 49.9417 701.846 54.755 699.376 58.935C696.97 63.0517 693.645 66.2183 689.401 68.435C685.221 70.6517 680.535 71.76 675.341 71.76ZM675.341 57.7C678.445 57.7 681.073 56.56 683.226 54.28C685.443 52 686.551 48.7383 686.551 44.495C686.551 40.2517 685.475 36.99 683.321 34.71C681.231 32.43 678.635 31.29 675.531 31.29C672.365 31.29 669.736 32.43 667.646 34.71C665.556 36.9267 664.511 40.1883 664.511 44.495C664.511 48.7383 665.525 52 667.551 54.28C669.641 56.56 672.238 57.7 675.341 57.7ZM733.265 71.76C728.641 71.76 724.525 70.9683 720.915 69.385C717.305 67.8017 714.455 65.6483 712.365 62.925C710.275 60.1383 709.103 57.035 708.85 53.615H724.905C725.095 55.4517 725.95 56.94 727.47 58.08C728.99 59.22 730.858 59.79 733.075 59.79C735.101 59.79 736.653 59.41 737.73 58.65C738.87 57.8267 739.44 56.7817 739.44 55.515C739.44 53.995 738.648 52.8867 737.065 52.19C735.481 51.43 732.916 50.6067 729.37 49.72C725.57 48.8333 722.403 47.915 719.87 46.965C717.336 45.9517 715.151 44.4 713.315 42.31C711.478 40.1567 710.56 37.275 710.56 33.665C710.56 30.625 711.383 27.87 713.03 25.4C714.74 22.8667 717.21 20.8717 720.44 19.415C723.733 17.9583 727.628 17.23 732.125 17.23C738.775 17.23 744 18.8767 747.8 22.17C751.663 25.4633 753.88 29.8333 754.45 35.28H739.44C739.186 33.4433 738.363 31.9867 736.97 30.91C735.64 29.8333 733.866 29.295 731.65 29.295C729.75 29.295 728.293 29.675 727.28 30.435C726.266 31.1317 725.76 32.1133 725.76 33.38C725.76 34.9 726.551 36.04 728.135 36.8C729.781 37.56 732.315 38.32 735.735 39.08C739.661 40.0933 742.86 41.1067 745.33 42.12C747.8 43.07 749.953 44.6533 751.79 46.87C753.69 49.0233 754.671 51.9367 754.735 55.61C754.735 58.7133 753.848 61.5 752.075 63.97C750.365 66.3767 747.863 68.2767 744.57 69.67C741.34 71.0633 737.571 71.76 733.265 71.76ZM814.643 43.64C814.643 45.16 814.548 46.7433 814.358 48.39H777.593C777.847 51.6833 778.892 54.2167 780.728 55.99C782.628 57.7 784.94 58.555 787.663 58.555C791.717 58.555 794.535 56.845 796.118 53.425H813.408C812.522 56.9083 810.907 60.0433 808.563 62.83C806.283 65.6167 803.402 67.8017 799.918 69.385C796.435 70.9683 792.54 71.76 788.233 71.76C783.04 71.76 778.417 70.6517 774.363 68.435C770.31 66.2183 767.143 63.0517 764.863 58.935C762.583 54.8183 761.443 50.005 761.443 44.495C761.443 38.985 762.552 34.1717 764.768 30.055C767.048 25.9383 770.215 22.7717 774.268 20.555C778.322 18.3383 782.977 17.23 788.233 17.23C793.363 17.23 797.923 18.3067 801.913 20.46C805.903 22.6133 809.007 25.685 811.223 29.675C813.503 33.665 814.643 38.32 814.643 43.64ZM798.018 39.365C798.018 36.5783 797.068 34.3617 795.168 32.715C793.268 31.0683 790.893 30.245 788.043 30.245C785.32 30.245 783.008 31.0367 781.108 32.62C779.272 34.2033 778.132 36.4517 777.688 39.365H798.018ZM872.89 57.225V71H864.625C858.735 71 854.143 69.575 850.85 66.725C847.557 63.8117 845.91 59.0933 845.91 52.57V31.48H839.45V17.99H845.91V5.07H862.155V17.99H872.795V31.48H862.155V52.76C862.155 54.3433 862.535 55.4833 863.295 56.18C864.055 56.8767 865.322 57.225 867.095 57.225H872.89ZM914.524 17.42C920.604 17.42 925.48 19.4467 929.154 23.5C932.827 27.49 934.664 33 934.664 40.03V71H918.514V42.215C918.514 38.6683 917.595 35.9133 915.759 33.95C913.922 31.9867 911.452 31.005 908.349 31.005C905.245 31.005 902.775 31.9867 900.939 33.95C899.102 35.9133 898.184 38.6683 898.184 42.215V71H881.939V0.699999H898.184V25.115C899.83 22.7717 902.079 20.9033 904.929 19.51C907.779 18.1167 910.977 17.42 914.524 17.42ZM995.922 43.64C995.922 45.16 995.828 46.7433 995.638 48.39H958.873C959.126 51.6833 960.171 54.2167 962.008 55.99C963.908 57.7 966.219 58.555 968.943 58.555C972.996 58.555 975.814 56.845 977.398 53.425H994.688C993.801 56.9083 992.186 60.0433 989.843 62.83C987.563 65.6167 984.681 67.8017 981.198 69.385C977.714 70.9683 973.819 71.76 969.513 71.76C964.319 71.76 959.696 70.6517 955.643 68.435C951.589 66.2183 948.423 63.0517 946.143 58.935C943.863 54.8183 942.723 50.005 942.723 44.495C942.723 38.985 943.831 34.1717 946.048 30.055C948.328 25.9383 951.494 22.7717 955.548 20.555C959.601 18.3383 964.256 17.23 969.513 17.23C974.643 17.23 979.203 18.3067 983.193 20.46C987.183 22.6133 990.286 25.685 992.503 29.675C994.783 33.665 995.922 38.32 995.922 43.64ZM979.298 39.365C979.298 36.5783 978.348 34.3617 976.448 32.715C974.548 31.0683 972.173 30.245 969.323 30.245C966.599 30.245 964.288 31.0367 962.388 32.62C960.551 34.2033 959.411 36.4517 958.968 39.365H979.298ZM1072.13 17.42C1078.72 17.42 1083.94 19.415 1087.81 23.405C1091.73 27.395 1093.7 32.9367 1093.7 40.03V71H1077.55V42.215C1077.55 38.795 1076.63 36.1667 1074.79 34.33C1073.02 32.43 1070.55 31.48 1067.38 31.48C1064.22 31.48 1061.71 32.43 1059.88 34.33C1058.1 36.1667 1057.22 38.795 1057.22 42.215V71H1041.07V42.215C1041.07 38.795 1040.15 36.1667 1038.31 34.33C1036.54 32.43 1034.07 31.48 1030.9 31.48C1027.74 31.48 1025.23 32.43 1023.4 34.33C1021.62 36.1667 1020.74 38.795 1020.74 42.215V71H1004.49V17.99H1020.74V24.64C1022.38 22.4233 1024.54 20.6817 1027.2 19.415C1029.86 18.085 1032.87 17.42 1036.22 17.42C1040.21 17.42 1043.76 18.275 1046.86 19.985C1050.03 21.695 1052.5 24.1333 1054.27 27.3C1056.11 24.3867 1058.61 22.0117 1061.78 20.175C1064.94 18.3383 1068.4 17.42 1072.13 17.42Z"
+            fill="url(#paint0_linear_4201_63)" />
+          <defs>
+            <linearGradient id="paint0_linear_4201_63" x1="-4" y1="37.5" x2="1100" y2="37.5"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFBF84" />
+              <stop offset="1" stop-color="#FE6783" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-5 font-poppins">
+        <p class="text-white lg:text-[40px] text-[20px] text-3xl lg:w-3/4 w-full text-center">Turn your audience into
+          email and
+          text message subscribers.</p>
+        <div class="flex lg:flex-row flex-col gap-4 mt-5">
+          <button
+            class="bg-blue rounded-md border-blue border lg:w-[300px] w-full px-4 lg:h-[77px] py-3  text-[20px] text-white hover:text-gray hover:bg-transparent hover:border-gray duration-300 font-bold">Get
+            Started Now</button>
+          <button
+            class="bg-transparent border border-gray rounded-md lg:w-[300px] px-4 lg:h-[77px] py-3 text-[20px] text-gray hover:bg-blue hover:text-white duration-300">View
+            A Demo</button>
+
+        </div>
+        <div class="flex flex-row gap-2">
+          <img src="img/Dot.png" alt="">
+          <p class="text-gray text-[20px]"><b class="text-white font-extrabold">1000+</b> creators have already started
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class=" container flex flex-col justify-around mt-20 gap-8 font-poppins js-scroll  fade-in" id="home">
+    <div class="text-center">
+      <h2 class="text-white font-bold lg:text-[70px] md:text-[45px] text-[30px]">Why Creators Love Marico</h2>
+    </div>
+    <div class="flex lg:flex-row flex-col lg:items-start items-center text-center w-full justify-around gap-5 ">
+      <div class="">
+        <div class="flex flex-row gap-2 items-center">
+          <img src="img/Smile_emoji.png" alt="" class="">
+          <h4 class="font-bold text-md text-white lg:text-[33px] md:text-[20px] text-[18px]">Reduced Anxiety</h4>
+        </div>
+        <p class="text-gray">
+          Never worry about losing your audience.
+        </p>
+      </div>
+
+      <div class="">
+        <div class="flex flex-row gap-2 items-center">
+          <img src="img/Happy_emoji.png" alt="" class="">
+          <h4 class="font-bold text-md text-white lg:text-[33px] md:text-[20px] text-[18px]">Lower Workload</h4>
+        </div>
+        <p class="text-gray">
+          Just share one link. We'll handle the rest.
+        </p>
+      </div>
+      <div class="">
+        <div class="flex flex-row gap-2 items-center">
+          <img src="img/Party_emoji.png" alt="" class="">
+          <h4 class="font-bold text-md text-white lg:text-[33px] md:text-[20px] text-[18px]"> More Time</h4>
+        </div>
+        <p class="text-gray">
+          Spend less time on marketing tools
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="container justify-center text-center items-center gap-10 mt-20 font-poppins">
+    <div class="flex flex-col gap-5 w-full text-center items-center js-scroll  fade-in">
+      <span class="text-blue font-semibold text-[24px]">STEP 1</span>
+      <h3 class="font-bold lg:text-[70px] md:text-[45px] text-[30px] text-white">Connect Your Content</h3>
+      <p class="text-gray lg:w-[62%]  text-center mb-6 lg:text-[28px] text-lg">Bring all of your content together and
+        get a Homepage
+        that
+        automatically updates whenever you create anywhere
+        online.</p>
+
+    </div>
+    <div>
+      <button
+        class="text-[20px] bg-transparent border border-gray rounded-md px-6 h-16 text-gray hover:bg-blue hover:text-white duration-300">View
+        Avaliable Sources</button>
+    </div>
+  </section>
+  <section class="container mt-20">
+    <div class="flex lg:flex-row flex-col justify-around gap-7 items-center font-poppins"
+      style="animation-fill-mode: both; animation-duration: 1000ms; animation-delay: 0ms; animation-iteration-count: 1; opacity: 1; animation-name: -350756630986736-3">
+      <div class="flex flex-col gap-6 text-white js-scroll slide-left ">
+        <p class="font-semibold lg:text-[30px] text-[24px] lg:text-start text-center">Your Homepage</p>
+        <div>
+          <h3 class="lg:text-[75px] md:text-[50px] text-[40px] font-extrabold lg:text-start text-center">Your Content.
+          </h3>
+          <h3 class="lg:text-[75px] md:text-[50px] text-[40px] font-extrabold lg:text-start text-center">All in <u
+              class="no-underline text-blue font-extrabold">One Spot</u>
+          </h3>
+        </div>
+        <div class="flex flex-col gap-4 items-center text-white">
+          <div class="flex flex-row items-center gap-2 w-full">
+            <img src="img/Bullet.png" alt="">
+            <p class="text-[20px] w-full">Bring all of your content together into one homepage.</p>
+          </div>
+          <div class="flex flex-row items-center gap-2">
+            <img src="img/Bullet (1).png" alt="">
+            <p class="text-[20px] w-full">Bring all of your content together into one homepage.</p>
+          </div>
+
+        </div>
+        <div class="flex gap-4 w-full  justify-center lg:justify-start">
+          <button
+            class="bg-blue rounded-md border-blue border w-48 h-14 text-white hover:text-gray hover:bg-transparent hover:border-gray duration-300 font-medium text-[20px]">Get
+            Started Now</button>
+          <button
+            class="bg-transparent border border-gray rounded-md w-48 h-14 text-gray hover:bg-blue hover:text-white duration-300 font-bold">View
+            A Demo</button>
+
+        </div>
+      </div>
+      <div class="js-scroll slide-right">
+        <img src="img/Screen.png" alt="" class="w-[820px]">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="flex flex-col gap-1 font-poppins mt-20 w-full text-center items-center" id="about">
+    <span class="text-blue font-semibold text-[24px]">STEP 2</span>
+    <h3 class="font-bold lg:text-[70px] md:text-[45px] text-[30px] text-white">Share Your Homepage</h3>
+    <p class="text-gray lg:w-[55%] w-5/6 text-center mb-6 lg:text-[28px] text-lg">Share your Wavium homepage link with
+      your followers, and
+      we'll handle the rest.</p>
+  </section>
+  <section class="container flex flex-col  mb-10 mt-8 gap-7 h-full w-full overflow-x-hidden">
+    <div class="flex lg:flex-row flex-col gap-40 lg:gap-10 w-full items-center ">
+      <div class="bg-[#0D0D0D] font-poppins  gap-10 lg:h-[616px] lg:w-1/2 h-full js-scroll slide-left">
+        <div class="px-8 py-8">
+          <p class="text-[#0FC65C] text-[30px]">One Link</p>
+          <p class="text-gray text-[70px] font-bold">ALL You Create.</p>
+          <p class="text-white text-[70px] font-bold">One Link</p>
+        </div>
+        <div class="flex relative pl-8 ">
+          <img src="img/Mobile_body.png" alt="">
+          <img src="img/Screen-2.png" alt="" class="absolute lg:flex hidden mt-24 ml-20">
+        </div>
+      </div>
+      <div
+        class="bg-[#0D0D0D] js-scroll slide-right relative font-poppins px-8 py-8 gap-28 flex flex-col h-full lg:h-[616px] w- lg:w-1/2">
+        <div class="">
+          <p class="text-[#0FC65C] text-[30px]">Collect Subscribers</p>
+        </div>
+        <div class="flex flex-col ">
+          <p class="text-gray text-[70px] font-bold">Emails</p>
+          <p class=" text-[70px] text-gray font-bold">Phone #s.</p>
+          <p class="text-white text-[70px] font-bold">All yours.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <button
+        class="bg-blue rounded-md border-blue border w-48 h-12 text-white hover:text-gray hover:bg-transparent hover:border-gray duration-300">Get
+        Started </button>
+    </div>
+  </section>
+  <section class="flex flex-col gap-1 w-full text-center items-center font-poppins mt-32">
+    <span class="text-blue font-semibold text-[24px]">STEP 3</span>
+    <h3 class="font-bold lg:text-[70px] md:text-[50px] text-[40px] text-white">Send Emails & Text Messages</h3>
+    <p class="text-gray lg:w-[550px]  text-center mb-6">No more going through a social platform. Reach and engage
+      your audience directly over email and text massage.</p>
+  </section>
+  <section class="container mt-20">
+    <div class="flex lg:flex-row flex-col justify-around gap-7 items-center  font-poppins js-scroll slide-left">
+      <div class="flex flex-col gap-6 text-white">
+        <p class="font-semibold text-[20px] lg:text-start text-center">Create & Share</p>
+        <div>
+          <h3 class="text-[40px] lg:text-start text-center font-extrabold">Reach Your</h3>
+          <h3 class="text-[40px] lg:text-start text-center font-extrabold">Audience <u
+              class="no-underline text-blue font-extrabold">Directly</u>
+          </h3>
+        </div>
+        <div class="flex flex-col gap-4 items-center text-gray">
+          <div class="flex flex-row items-center gap-2 w-full">
+            <img src="img/Bullet.png" alt="">
+            <p>Embed content or create something new to share.</p>
+          </div>
+          <div class="flex flex-row items-center gap-2">
+            <img src="img/Bullet (1).png" alt="">
+            <p>Share content over email, text message or your homepage.</p>
+          </div>
+
+        </div>
+        <div class="flex lg:flex-row flex-col lg:items-start items-center gap-4 w-full">
+          <button
+            class="bg-blue rounded-md border-blue border w-48 h-12 text-white hover:text-gray hover:bg-transparent hover:border-gray duration-300">Get
+            Started Now</button>
+          <button
+            class="bg-transparent border border-gray rounded-md w-48 h-12 text-gray hover:bg-blue hover:text-white duration-300">View
+            A Demo</button>
+        </div>
+      </div>
+      <div class="js-scroll slide-right">
+        <img src="img/Screen.png" alt="" class="w-[820px]">
+      </div>
+    </div>
+  </section>
+  <section
+    class="container flex flex-col justify-center gap-4 items-center text-center mt-16 font-poppins scroll-element js-scroll  fade-in "
+    id="pricing">
+    <p class="text-white font-bold lg:text-[70px] md:text-[50px] text-[40px] mb-5">Experts Agree</p>
+    <img src="img/Image.png" alt="">
+  </section>
+  <section class="overflow-x-hidden lg:mt-72 mt-36 " id="blog">
+    <div class="container  flex justify-center w-full items-center font-poppins absolute">
+      <img src="https://nikitoskokos.github.io/Marico/Marico/img/audience.png" alt=""
+        class="absolute bg-cover bg-no-repeat overflow-x-hidden w-full">
+      <h3 class="lg:text-[70px] text-[20px] relative  font-bold text-white text-center lg:w-5/6 ">We've helped over
+        1,000 creatorsre claim
+        control of their audience.</h3>
+    </div>
+  </section>
+  <section
+    class="scroll-element js-scroll  fade-in  font-poppins  lg:mt-[470px] md:mt-[240px] mt-[200px] text-white relative flex flex-col gap-8 w-full text-center items-center">
+    <img src="img/Logo.png" alt="" class="lg:w-[159px] md:w-[100px] 80px" height="lg:149px">
+    <div>
+      <h3 class="lg:text-[93px] md:text-[45px] text-[30px] font-extrabold tracking-wide">Get Started Now</h3>
+      <p class="lg:text-[40px] text-[18px]">Setup is easy and takes under 5 minutes.</p>
+    </div>
+    <button
+      class="bg-blue rounded-md border-blue border lg:w-[300px] px-4 py-3 lg:p-0 lg:h-[77px] text-[20px] text-white hover:text-gray hover:bg-transparent hover:border-gray duration-300 font-bold">Get
+      Started Now</button>
+    <div class="flex flex-row gap-2">
+      <img src="img/Dot.png" alt="">
+      <p class="text-gray text-[20px]"><b class="text-white font-extrabold">1000+</b> creators have already started
+      </p>
+    </div>
+  </section>
+  <footer
+    class="container flex lg:flex-row flex-col lg:justify-between justify-center px-12 items-center relative font-poppins mt-20 lg:gap-0 gap-4">
+    <div class="flex flex-col gap-1">
+      <div class="flex flex-row ">
+        <img src="img/Company_logo.png" alt="">
+      </div>
+
+      <div>
+        <p class="text-gray lg:text-start text-center">info@marico.co</p>
+      </div>
+    </div>
+    <div class="flex lg:flex-row flex-col items-center gap-8">
+      <ul class="flex flex-row text-gray gap-5 ">
+        <li class="hover:text-blue cursor-pointer  duration-300">About</li>
+        <li class="hover:text-blue cursor-pointer  duration-300">Pricing</li>
+        <li class="hover:text-blue cursor-pointer  duration-300">Blog</li>
+        <li class="hover:text-blue cursor-pointer  duration-300">Sign in</li>
+      </ul>
+      <button onclick="scrollToTop()" class="scroll-to-top  bottom-4 right-4 
+       text-white rounded-full 
+      transition duration-300 hover:brightness-75
+     ">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240227155250/up.png"
+          class="w-16 h-16 rounded-full bg-white" alt="">
+      </button>
+    </div>
+  </footer>
+  <div class=" w-full h-0 fixed top-0 bg-black opacity-50 z-20" id="opacity-50">
+  </div>
+  <script src="script.js"></script>
+  <script>
+
+
+
+
+  </script>
+</body>
+
+</html>
